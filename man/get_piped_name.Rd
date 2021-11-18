@@ -4,12 +4,12 @@
 \alias{get_piped_name}
 \title{get piped name}
 \usage{
-get_piped_name(objName, default_name = "Title")
+get_piped_name(object, default_name = "Table")
 }
 \arguments{
-\item{objName}{an object}
+\item{object}{an object}
 
-\item{default_name}{default name if object name is not able to be accessed in case of a long pipe}
+\item{default_name}{string Attempts to return this string if an error occurs.}
 }
 \value{
 string
@@ -17,19 +17,33 @@ string
 \description{
 this function captures the name of an object piped into a function, and returns as a string. Powers the automatic naming found in presenter.
 }
-\details{
-citation: \url{https://michaelbarrowman.co.uk/post/getting-a-variable-name-in-a-pipeline/}
-}
 \examples{
 
-## works if the object is piped or given as an argument
+#necessary to specify this option when using get_piped_name in knitr
+options(rlang_trace_top_env = rlang::current_env())
+
+
+### works if the object is piped or given as an argument
 iris \%>\%
-get_piped_name
+get_piped_name()
 
 get_piped_name(iris)
 
-## does not work for multistep pipes. instead the 'default_name' is printed
+### can even extract name from multistep pipes
 iris \%>\%
 dplyr::select(1:3) \%>\%
-get_piped_name
+get_piped_name()
+
+### can be placed inside other functions to capture the name and save it
+
+find_name <- function(x){
+ get_piped_name() -> new_name
+
+ new_name
+}
+
+iris \%>\%
+dplyr:select(1:3) \%>\%
+find_name()
+
 }
