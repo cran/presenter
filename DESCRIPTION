@@ -1,7 +1,7 @@
 Package: presenter
 Type: Package
 Title: Present Data with Style
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Harrison",
            family = "Tietze",
@@ -17,15 +17,15 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: flextable, magrittr, dplyr, rlang, stringr, purrr, officer,
         randomcoloR, tidyr, openxlsx, lubridate, janitor, tibble,
-        stringi, berryFunctions, rvg, tidyselect, formattable, badger,
+        stringi, berryFunctions, rvg, tidyselect, formattable,
         framecleaner
-RoxygenNote: 7.1.2
-Suggests: knitr, rmarkdown, ggplot2
+RoxygenNote: 7.2.3
+Suggests: knitr, rmarkdown, ggplot2, badger
 VignetteBuilder: knitr
 URL: https://github.com/Harrison4192/presenter
 BugReports: https://github.com/Harrison4192/presenter/issues
 NeedsCompilation: no
-Packaged: 2021-11-18 02:38:21 UTC; Harrison
+Packaged: 2023-02-02 14:41:48 UTC; 81804
 Author: Harrison Tietze [aut, cre]
 Repository: CRAN
-Date/Publication: 2021-11-18 06:20:05 UTC
+Date/Publication: 2023-02-02 15:00:02 UTC
